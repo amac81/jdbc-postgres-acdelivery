@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Order {
 	private Long id;
-	private String latitude;
-	private String longitude;
+	private Double latitude;
+	private Double longitude;
 	private Instant moment;
 	private OrderStatus status;	
 	
@@ -15,7 +15,7 @@ public class Order {
 	
 	public Order () {}
 	
-	public Order(Long id, String latitude, String longitude, Instant moment, OrderStatus status) {
+	public Order(Long id, Double latitude, Double longitude, Instant moment, OrderStatus status) {
 		this.id = id;
 		this.latitude = latitude;
 		this.longitude = longitude;
@@ -31,19 +31,19 @@ public class Order {
 		this.id = id;
 	}
 
-	public String getLatitude() {
+	public Double getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(String latitude) {
+	public void setLatitude(Double latitude) {
 		this.latitude = latitude;
 	}
 
-	public String getLongitude() {
+	public Double getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(String longitude) {
+	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
 
@@ -76,5 +76,12 @@ public class Order {
 	public List<Product> getProducts() {
 		return products;
 	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", latitude=" + latitude + ", longitude=" + longitude + ", moment=" + moment
+				+ ", status=" + status + ", products=" + products + "]";
+	}
+	
 	
 }
